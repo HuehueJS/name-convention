@@ -1,0 +1,23 @@
+{
+  "name": "common-lang",
+  "version": "0.0.0",
+  "description": "Exploring",
+  "main": "src/main.js",
+  "repository": "https://github.com/HuehueJS/common-lang",
+  "author": "HuehueJs",
+  "license": "BSD",
+  "private": false,
+  "scripts": {
+    "build": "babel ./src -d ./dist",
+    "build-dev": "babel ./src -d ./dist --source-maps inline",
+    "test": "mocha --compilers js:babel-core/register"
+  },
+  "devDependencies": {
+    "babel": "^6.23.0",
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-es2018": "^1.0.0",
+    "chai": "^4.1.2",
+    "mocha": "^5.1.1"
+  }
+}
