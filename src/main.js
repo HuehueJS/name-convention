@@ -18,7 +18,7 @@ export const getattr = function (obj, key, defaultValue = undefined) {
     return currentValue;
 }
 
-export const setattr = function(obj,key,value=null) {
+export const setattr = function(obj,key,value=null,force=false) {
     if (obj === undefined || obj === null) {
         return defaultValue;
     }
@@ -30,7 +30,10 @@ export const setattr = function(obj,key,value=null) {
     }
     let currentValue = obj;
     for(let k of key.slice(0,-1)){
-        if(! k in currentValue){
+        if(!(k in currentValue)){
+            currentValue[k] = {}
+        }
+        if(!currentValue[k] && force){
             currentValue[k] = {}
         }
         currentValue = currentValue[k]

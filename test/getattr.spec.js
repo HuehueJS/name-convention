@@ -30,7 +30,7 @@ describe('#getattr', function () {
         let obj = { 'key_1': [1] }
         expect(getattr(obj, ['key_1', 0])).to.equal(1)
     })
-    it('when key dosn\'t exists should return the default value', function () {
+    it('when key doesn\'t exists should return the default value', function () {
         let obj = { 'key': 1 }
         expect(getattr(obj, 'wrong_key', 'default')).to.equal('default')
     })
