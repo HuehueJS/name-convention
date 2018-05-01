@@ -1,6 +1,29 @@
-export class CaseConverter {
 
-    static decode(item) {
+export class NameConvenionSplitter {
+    split(name) {
+        throw new Error();
+    }
+}
+
+export class NameConventionGluer {
+    glue(namePieces){
+        throw new Error();
+    }
+}
+
+export class NameConventionConverter {
+
+
+    constructor(gluer,splitter){
+        this.gluer = gluer;
+        this.splitter = splitter;
+    }
+
+    parseString(oneName) {
+        return this.gluer.glue(this.splitter.split(oneName));
+    }
+
+    parse(item){
         if(typeof item === 'string') {
             return item + ' coxinha';
         }
