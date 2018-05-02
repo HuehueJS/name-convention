@@ -1,19 +1,4 @@
-
-export class NameConvenionSplitter {
-    split(name) {
-        throw new Error();
-    }
-}
-
-export class NameConventionGluer {
-    glue(namePieces){
-        throw new Error();
-    }
-}
-
 export class NameConventionConverter {
-
-
     constructor(gluer,splitter){
         this.gluer = gluer;
         this.splitter = splitter;
@@ -25,21 +10,21 @@ export class NameConventionConverter {
 
     parse(item){
         if(typeof item === 'string') {
-            return item + ' coxinha';
+            return this.parseString(item);
         }
         if(Array.isArray(item)) {
             let arr = [];
             for(let it of item) {
-                arr.push(CaseConverter.decode(it));
+                arr.push(this.parse(it));
             }
             return arr;
         }
         let obj = {};
         for(const key in item) {
             if(typeof item[key] === 'object') {
-                item[key] = CaseConverter.decode(item[key]);
+                item[key] = this.parse(item[key]);
             }
-            const new_key = key+'_coxinha';
+            const new_key = this.parseString(key);
             obj[new_key] = item[key];
         }
         return obj;
