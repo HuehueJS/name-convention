@@ -1,18 +1,18 @@
 import { expect } from 'chai'
-import { CamelToSnakeSplitter } from '../src/case-converter/name-convention-splitter/camel-to-snake.splitter';
-import { CamelToSnakeGluer } from '../src/case-converter/name-convention-gluer/camel-to-snake.gluer';
+import { CamelSplitter } from '../src/case-converter/name-convention-splitter/camel.splitter';
+import { SnakeGluer } from '../src/case-converter/name-convention-gluer/snake.gluer';
 import { NameConventionConverter } from '../src/case-converter/name-convention-converter';
 
-describe('Name Convention Converter', function () {
-    let camelToSnakeGluer = null;
-    let camelToSnakeSplitter = null;
+describe('Name Convention Converter Camel To Snake', function () {
+    let snakeGluer = null;
+    let camelSplitter = null;
 
     let nameConverter = null;
 
     beforeEach(() => {
-        camelToSnakeGluer = new CamelToSnakeGluer();
-        camelToSnakeSplitter = new CamelToSnakeSplitter();
-        nameConverter = new NameConventionConverter(camelToSnakeGluer, camelToSnakeSplitter); 
+        snakeGluer = new SnakeGluer();
+        camelSplitter = new CamelSplitter();
+        nameConverter = new NameConventionConverter(snakeGluer, camelSplitter); 
     });
 
     describe("#String camelCase to snake_case", () => {

@@ -5,10 +5,21 @@ export class NameConventionConverter {
     }
 
     parseString(oneName) {
-        return this.gluer.glue(this.splitter.split(oneName));
+        try {
+            if(!(this.gluer || this.splitter)) {
+                throw Error();
+            }
+            return this.gluer.glue(this.splitter.split(oneName));
+        } catch(err) {
+            throw err;
+        }
+        
     }
 
     parse(item){
+        if(typeof item !== 'string' && typeof item !== 'object') {
+            throw TypeError();
+        }
         if(typeof item === 'string') {
             return this.parseString(item);
         }
