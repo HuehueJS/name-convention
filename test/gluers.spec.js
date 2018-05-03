@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import { Gluers } from '../src/name-convention/gluers';
+import { Gluers } from '../src/name-convention/gluer/gluers';
 
 
 describe('Gluers', function () {

@@ -1,6 +1,6 @@
 import { expect } from 'chai'
 import { SnakeSplitter } from '../src/name-convention/splitter/snake.splitter';
-import { Gluers } from '../src/name-convention/gluers';
+import { Gluers } from '../src/name-convention/gluer/gluers';
 import { NameConventionConverter } from '../src/name-convention/converter';
 
 describe('Name Convention Converter Snak to Camel', function () {
