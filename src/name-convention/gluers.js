@@ -12,7 +12,8 @@ export const Gluers = {
         upperCaseFirst
     ),
     LowerSnakeCase: new DefaultGluer(
-        '_'
+        '_',
+        lowerCase
     ),
     UpperSnakeCase: new DefaultGluer(
         '_',

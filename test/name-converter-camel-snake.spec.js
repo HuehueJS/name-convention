@@ -1,6 +1,6 @@
-import { expect } from 'chai'
-import { CamelSplitter } from '../src/name-convention/name-convention-splitter/camel.splitter';
-import { SnakeGluer } from '../src/name-convention/name-convention-gluer/snake.gluer';
+import { expect } from 'chai';
+import { CamelSplitter } from '../src/name-convention/splitter/camel.splitter';
+import { Gluers } from '../src/name-convention/gluers';
 import { NameConventionConverter } from '../src/name-convention/converter';
 
 describe('Name Convention Converter Camel To Snake', function () {
@@ -10,7 +10,7 @@ describe('Name Convention Converter Camel To Snake', function () {
     let nameConverter = null;
 
     beforeEach(() => {
-        snakeGluer = new SnakeGluer();
+        snakeGluer = Gluers.LowerSnakeCase;
         camelSplitter = new CamelSplitter();
         nameConverter = new NameConventionConverter(snakeGluer, camelSplitter); 
     });
