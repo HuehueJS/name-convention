@@ -40,3 +40,7 @@ export const setattr = function(obj,key,value=null,force=false) {
     }
     currentValue[key.slice(-1)[0]] = value;
 }
+
+export const isNullOrUndefined = obj => [null,undefined].indexOf(obj) !== -1
+
+export const noop = x => x

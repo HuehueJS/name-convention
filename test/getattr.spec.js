@@ -1,5 +1,5 @@
-import { getattr } from '../src/main'
-import { expect } from 'chai'
+import { getattr } from '../src/main';
+import { expect } from 'chai';
 
 describe('#getattr', function () {
     it('when key exists should return the value', function () {

@@ -1,18 +1,15 @@
-
-const isNullOrUndefined = obj => [null,undefined].indexOf(obj) !== -1
-
-const noop = x => x
+import { noop, isNullOrUndefined } from '../../main';
 
 export class DefaultGluer {
 
-    constructor(glueString='',piecePreparer=noop,namePreparer=noop){
+    constructor(glueString = '', piecePreparer = noop, namePreparer = noop) {
         this.glueString = glueString;
         this.namePreparer = namePreparer;
         this.piecePreparer = piecePreparer;
     }
 
     glue(namePieces) {
-        if(isNullOrUndefined(namePieces)) {
+        if (isNullOrUndefined(namePieces)) {
             throw Error("NamePieces cannot be undefined!");
         }
         return this.namePreparer(Array.from(namePieces).map(this.piecePreparer).join(this.glueString));
