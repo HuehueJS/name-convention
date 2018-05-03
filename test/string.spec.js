@@ -1,5 +1,5 @@
 import { expect } from 'chai'
-import { upperCase, lowerCase, upperCaseFirst, lowerCaseFirst } from '../src/string.js';
+import { upperCase, lowerCase, upperCaseFirst, lowerCaseFirst } from '../src/string';
 
 describe('#upperCase',function(){
     it('when a string should return a upper case string',function(){

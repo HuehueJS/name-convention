@@ -1,7 +1,7 @@
 import { expect } from 'chai'
 import { CamelSplitter } from '../src/name-convention/name-convention-splitter/camel.splitter';
 import { SnakeGluer } from '../src/name-convention/name-convention-gluer/snake.gluer';
-import { NameConventionConverter } from '../src/name-convention/name-convention-converter';
+import { NameConventionConverter } from '../src/name-convention/converter';
 
 describe('Name Convention Converter', function () {
     let snakeGluer = null;

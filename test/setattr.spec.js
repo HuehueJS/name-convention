@@ -1,4 +1,4 @@
-import { setattr } from '../src/main.js'
+import { setattr } from '../src/main'
 import { expect } from 'chai'
 
 describe("#setattr", function () {
