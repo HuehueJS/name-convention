@@ -1,12 +1,12 @@
 
-isNullOrUndefined = obj => [null,undefined].indexOf(obj) !== -1
+const isNullOrUndefined = obj => [null,undefined].indexOf(obj) !== -1
 
-noop = x => x
+const noop = x => x
 
 export class DefaultGluer {
 
-    constructor(glue='',piecePreparer=noop,namePreparer=noop){
-        this.glue = glue;
+    constructor(glueString='',piecePreparer=noop,namePreparer=noop){
+        this.glueString = glueString;
         this.namePreparer = namePreparer;
         this.piecePreparer = piecePreparer;
     }
@@ -15,6 +15,6 @@ export class DefaultGluer {
         if(isNullOrUndefined(namePieces)) {
             throw Error("NamePieces cannot be undefined!");
         }
-        return this.namePreparer(Array.from(namePieces).map(this.piecePreparer).join(this.glue));
+        return this.namePreparer(Array.from(namePieces).map(this.piecePreparer).join(this.glueString));
     }
 }
