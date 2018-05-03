@@ -3,6 +3,7 @@ node_js:
   - 7
   - 6
 script: yarn test
+after_success: yarn coverage
 install:
   - yarn
 cache:
