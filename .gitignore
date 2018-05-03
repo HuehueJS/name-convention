@@ -1,6 +1,7 @@
 *.*
 !.gitignore
 !.travis.yml
+!.coveralls.yml
 **.log
 **.lock
 /dist
