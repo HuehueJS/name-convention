@@ -11,5 +11,9 @@ export const Splitters = {
     SnakeCase: new DefaultSplitter(
         null,
         new RegExp('_+','g')
+    ),
+    KebabCase: new DefaultSplitter(
+        null,
+        new RegExp('-+','g')
     )
 };

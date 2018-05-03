@@ -18,5 +18,13 @@ export const Gluers = {
     UpperSnakeCase: new DefaultGluer(
         '_',
         upperCase
+    ),
+    LowerKebabCase: new DefaultGluer(
+        '-',
+        lowerCase
+    ),
+    UpperKebabCase: new DefaultGluer(
+        '-',
+        upperCase
     )
 }

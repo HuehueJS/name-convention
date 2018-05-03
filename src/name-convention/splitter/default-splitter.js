@@ -1,5 +1,4 @@
 import { isNullOrUndefined } from '../../main';
-import { lowerCase } from '../../string';
 
 export class DefaultSplitter {
 
@@ -18,8 +17,7 @@ export class DefaultSplitter {
         }
         const preparedName = this.preparerRegex ? name.replace(this.preparerRegex, this.replacePattern) : name;
         return preparedName
-            .split(this.splitterRegex)
-            .map(lowerCase);
+            .split(this.splitterRegex);
     }
 
 }
