@@ -2,7 +2,9 @@
 !.gitignore
 !.travis.yml
 !.coveralls.yml
+!.babelrc
 **.log
 **.lock
 /dist
 /node_modules
+/coverage
