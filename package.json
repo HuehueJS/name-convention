@@ -7,6 +7,12 @@
   "author": "HuehueJs",
   "license": "BSD",
   "private": false,
+  "standard": {
+    "ignore": [
+      "coverage/**",
+      "node_modules/**"
+    ]
+  },
   "scripts": {
     "build": "babel ./src -d ./dist",
     "build-dev": "babel ./src -d ./dist --source-maps inline",
