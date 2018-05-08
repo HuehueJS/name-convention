@@ -1403,9 +1403,9 @@ http-signature@~1.2.0:
     jsprim "^1.2.2"
     sshpk "^1.7.0"
 
-huehuejs-common-lang@^0.0.2:
-  version "0.0.2"
-  resolved "https://registry.yarnpkg.com/huehuejs-common-lang/-/huehuejs-common-lang-0.0.2.tgz#71d842f006c93002454898aaafe587c09554fb04"
+huehuejs-common-lang@^0.0.4:
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/huehuejs-common-lang/-/huehuejs-common-lang-0.0.4.tgz#4cd427e2abf09d8bb459a3711c40facf08412082"
 
 iconv-lite@^0.4.4:
   version "0.4.21"

@@ -14,6 +14,7 @@ export class NameConventionConverter {
     }
 
     _parse(item, originalKeyTail, parsedKeyTail) {
+        let newItem = item.constructor();
         for (const key in item) {
             const newOriginalKeyTail = originalKeyTail.concat([key]);
             const parsedKey = typeof key === "string" ? this.parseString(key) : key;

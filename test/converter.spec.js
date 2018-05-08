@@ -4,10 +4,16 @@ import { Gluers } from '../src/name-convention/gluer/gluers';
 import { NameConventionConverter } from '../src/name-convention/converter';
 
 describe('Name Convention Converter', function () {
-    
+
     let nameConverter = null;
 
+    let snakeGluer = null;
+
+    let camelSplitter = null;
+
     beforeEach(() => {
+        snakeGluer = Gluers.LowerSnakeCase;
+        camelSplitter = Splitters.CamelCase;
         nameConverter = new NameConventionConverter(Gluers.LowerSnakeCase, Splitters.CamelCase);
     });
 
