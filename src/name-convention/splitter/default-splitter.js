@@ -12,9 +12,6 @@ export class DefaultSplitter {
         if (isNullOrUndefined(name)) {
             throw Error("Name cannot be undefined!");
         }
-        if (typeof name !== 'string') {
-            throw TypeError();
-        }
         const preparedName = this.preparerRegex ? name.replace(this.preparerRegex, this.replacePattern) : name;
         return preparedName
             .split(this.splitterRegex);
