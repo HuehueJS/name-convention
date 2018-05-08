@@ -33,7 +33,7 @@ describe('Name Convention Converter Camel To Snake', function () {
         it("parse camelCase to snake_case", () => {
             const toParseArr = ['firstName', 'lastName'];
             const expectedArr = ['first_name', 'last_name'];
-            expect(nameConverter.parse(toParseArr)).to.deep.equal(expectedArr);
+            expect(toParseArr.map(it => nameConverter.parse(it))).to.deep.equal(expectedArr);
         });
 
         it("what return when name is already parsed", () => {
@@ -43,7 +43,7 @@ describe('Name Convention Converter Camel To Snake', function () {
 
         it("parse camelCase to snake_case and expect a wrong value", () => {
             const arr = ['firstName', 'lastName'];
-            expect(nameConverter.parse(arr)).to.not.deep.equal(arr);
+            expect(arr.map(it => nameConverter.parse(it))).to.not.deep.equal(arr);
         });
     });
 
