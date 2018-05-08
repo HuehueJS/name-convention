@@ -1,9 +1,9 @@
 {
-  "name": "common-lang",
+  "name": "huehuejs-name-convention",
   "version": "0.0.0",
   "description": "Exploring",
   "main": "src/main.js",
-  "repository": "https://github.com/HuehueJS/common-lang",
+  "repository": "https://github.com/HuehueJS/name-convention",
   "author": "HuehueJs",
   "license": "BSD",
   "private": false,
@@ -12,6 +12,9 @@
     "build-dev": "babel ./src -d ./dist --source-maps inline",
     "test": "nyc --reporter=html --reporter=text mocha --recursive --compilers js:babel-core/register",
     "coverage": "nyc report --reporter=text-lcov | coveralls"
+  },
+  "dependencies": {
+    "huehuejs-common-lang": "^0.0.0"
   },
   "devDependencies": {
     "babel": "^6.23.0",

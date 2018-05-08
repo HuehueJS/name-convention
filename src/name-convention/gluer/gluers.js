@@ -1,5 +1,5 @@
 import { DefaultGluer } from './default-gluer.js';
-import { upperCase, lowerCase, upperCaseFirst, lowerCaseFirst } from '../../string.js';
+import { upperCase, lowerCase, upperCaseFirst, lowerCaseFirst } from 'huehuejs-common-lang';
 
 export const Gluers = {
     LowerCamelCase: new DefaultGluer(

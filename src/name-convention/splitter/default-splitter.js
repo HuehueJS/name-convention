@@ -1,4 +1,4 @@
-import { isNullOrUndefined } from '../../main';
+import { isNullOrUndefined } from 'huehuejs-common-lang';
 
 export class DefaultSplitter {
 
