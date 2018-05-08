@@ -1,8 +1,12 @@
 {
   "name": "huehuejs-name-convention",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Exploring",
-  "main": "src/main.js",
+  "main": "dist/main.js",
+  "files": [
+    "dist/main.js",
+    "dist/string.js"
+  ],
   "repository": "https://github.com/HuehueJS/name-convention",
   "author": "HuehueJs",
   "license": "BSD",
@@ -10,14 +14,16 @@
   "standard": {
     "ignore": [
       "coverage/**",
-      "node_modules/**"
+      "node_modules/**",
+      "src/**"
     ]
   },
   "scripts": {
     "build": "babel ./src -d ./dist",
     "build-dev": "babel ./src -d ./dist --source-maps inline",
     "test": "nyc --reporter=html --reporter=text mocha --recursive --compilers js:babel-core/register",
-    "coverage": "nyc report --reporter=text-lcov | coveralls"
+    "coverage": "nyc report --reporter=text-lcov | coveralls",
+    "publish" : "yarn build && npm publish"
   },
   "dependencies": {
     "huehuejs-common-lang": "^0.0.0"
