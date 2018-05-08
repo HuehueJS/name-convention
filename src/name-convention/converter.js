@@ -1,43 +1,40 @@
+const default_matcher = function (value, originalKeyTail, parsedKeyTail) {
+    return typeof value === "object";
+}
+
 export class NameConventionConverter {
-    constructor(gluer,splitter){
+    constructor(gluer, splitter, matcher = default_matcher) {
         this.gluer = gluer;
         this.splitter = splitter;
+        this.matcher = matcher;
     }
 
     parseString(oneName) {
-        try {
-            if(!(this.gluer || this.splitter)) {
-                throw Error();
-            }
-            return this.gluer.glue(this.splitter.split(oneName));
-        } catch(err) {
-            throw err;
-        }
-        
+        return this.gluer.glue(this.splitter.split(oneName));
     }
 
-    parse(item){
-        if(typeof item !== 'string' && typeof item !== 'object') {
-            throw TypeError();
+    _parse(item, originalKeyTail, parsedKeyTail) {
+        for (const key in item) {
+            const newOriginalKeyTail = originalKeyTail.concat([key]);
+            const parsedKey = typeof key === "string" ? this.parseString(key) : key;
+            const newParsedKeyTail = parsedKeyTail.concat([parsedKey]);
+            const value = item[key];
+            const parsedValue = this.matcher(value, originalKeyTail, parsedKeyTail) ? this._parse(value, originalKeyTail, parsedKeyTail) : value;
+            newItem[parsedKey] = parsedValue;
         }
-        if(typeof item === 'string') {
+        return newItem;
+    }
+
+    parse(item) {
+        if (!(this.gluer || this.splitter || this.matcher)) {
+            throw Error();
+        }
+        if (typeof item === "string") {
             return this.parseString(item);
         }
-        if(Array.isArray(item)) {
-            let arr = [];
-            for(let it of item) {
-                arr.push(this.parse(it));
-            }
-            return arr;
+        if(typeof item === "object"){
+            return this._parse(item, [], [])
         }
-        let obj = {};
-        for(const key in item) {
-            if(typeof item[key] === 'object') {
-                item[key] = this.parse(item[key]);
-            }
-            const new_key = this.parseString(key);
-            obj[new_key] = item[key];
-        }
-        return obj;
+        throw Error();
     }
 }
