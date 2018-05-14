@@ -24,7 +24,7 @@
     "coverage": "nyc report --reporter=text-lcov | coveralls"
   },
   "dependencies": {
-    "huehuejs-common-lang": "^0.0.4"
+    "huehuejs-common-lang": "^0.0.16"
   },
   "devDependencies": {
     "babel": "^6.23.0",
