@@ -1,10 +1,10 @@
 {
   "name": "huehuejs-name-convention",
-  "version": "0.0.2",
+  "version": "0.0.5",
   "description": "Exploring",
-  "main": "dist/converter.js",
+  "main": "converter.js",
   "files": [
-    "dist/**"
+    "**/*.js"
   ],
   "repository": "https://github.com/HuehueJS/name-convention",
   "author": "HuehueJs",
@@ -20,6 +20,9 @@
   "scripts": {
     "build": "babel ./src -d ./dist",
     "build-dev": "babel ./src -d ./dist --source-maps inline",
+    "predeploy": "rm -rf dist && mkdir -p dist && npm run build && cp ./package.json ./dist/",
+    "deploy": "cd ./dist && npm publish",
+    "postdeploy": "cd ..",
     "test": "nyc --reporter=html --reporter=text mocha --recursive --compilers js:babel-core/register",
     "coverage": "nyc report --reporter=text-lcov | coveralls"
   },

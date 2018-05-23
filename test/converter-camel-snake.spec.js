@@ -1,7 +1,7 @@
 import { expect } from 'chai';
-import { Splitters } from '../src/name-convention/splitter/splitters';
-import { Gluers } from '../src/name-convention/gluer/gluers';
-import { NameConventionConverter } from '../src/name-convention/converter';
+import { Splitters } from '../src/splitter/splitters';
+import { Gluers } from '../src/gluer/gluers';
+import { NameConventionConverter } from '../src/converter';
 
 describe('Name Convention Converter Camel To Snake', function () {
     let snakeGluer = null;
