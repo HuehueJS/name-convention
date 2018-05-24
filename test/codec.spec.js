@@ -2,13 +2,14 @@ import { expect } from 'chai';
 import { Gluers } from '../src/name-convention/gluer/gluers';
 import { Splitters } from '../src/name-convention/splitter/splitters';
 import { NameConventionConverter } from '../src/name-convention/converter';
-import { NameConventionCodec } from '../src/name-convention/converter';
+import { makeCodec } from '../src/name-convention/codec/index';
+import { NameConventions } from '../src/name-convention/convention/index';
 
 
 describe('NameConvetionCodec', function () {
-    let codec = new NameConventionCodec(
-        new NameConventionConverter(Gluers.LowerSnakeCase,Splitters.CamelCase),
-        new NameConventionConverter(Gluers.LowerCamelCase,Splitters.SnakeCase)
+    let codec = makeCodec(
+        NameConventions.LowerSnakeCase,
+        NameConventions.LowerCammelCase
     );
     let snakeCaseData = {
         'a_value' : 1,
