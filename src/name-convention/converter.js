@@ -39,3 +39,20 @@ export class NameConventionConverter {
         throw Error();
     }
 }
+
+export class NameConventionCodec {
+
+    constructor(decoder,encoder){
+        this.encoder = encoder;
+        this.decoder = decoder;
+    }
+
+    encode(data) {
+        return this.encoder.parse(data);
+    }
+
+    decode(data) {
+        return this.decoder.parse(data);
+    }
+
+}
