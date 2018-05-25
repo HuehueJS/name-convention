@@ -51,5 +51,10 @@ describe('Name Convention Converter', function () {
             const test = () => nameConverter.parse(138);
             expect(test).to.throw();
         });
+        it("should throw an error", () => {
+            nameConverter = new NameConventionConverter(null, null, null);
+            const test = () => nameConverter.parse();
+            expect(test).to.throw();
+        });
     });
 });
