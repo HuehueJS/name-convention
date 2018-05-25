@@ -1,9 +1,9 @@
 import { expect } from 'chai';
-import { Gluers } from '../src/name-convention/gluer/gluers';
-import { Splitters } from '../src/name-convention/splitter/splitters';
-import { NameConventionConverter } from '../src/name-convention/converter';
-import { makeCodec } from '../src/name-convention/codec/index';
-import { NameConventions } from '../src/name-convention/convention/index';
+import { Gluers } from '../src/gluer/gluers';
+import { Splitters } from '../src/splitter/splitters';
+import { NameConventionConverter } from '../src/converter';
+import { makeCodec } from '../src/codec/index';
+import { NameConventions } from '../src/convention/index';
 
 
 describe('NameConvetionCodec', function () {

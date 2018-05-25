@@ -1,6 +1,6 @@
 import { expect } from 'chai';
 
-import { Splitters } from '../src/name-convention/splitter/splitters';
+import { Splitters } from '../src/splitter/splitters';
 
 describe('Splitter',function(){
 

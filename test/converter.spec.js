@@ -1,7 +1,7 @@
 import { expect } from 'chai';
-import { Splitters } from '../src/name-convention/splitter/splitters';
-import { Gluers } from '../src/name-convention/gluer/gluers';
-import { NameConventionConverter } from '../src/name-convention/converter';
+import { Splitters } from '../src/splitter/splitters';
+import { Gluers } from '../src/gluer/gluers';
+import { NameConventionConverter } from '../src/converter';
 
 describe('Name Convention Converter', function () {
 
@@ -49,6 +49,11 @@ describe('Name Convention Converter', function () {
     describe("#parse method", () => {
         it("parse a number", () => {
             const test = () => nameConverter.parse(138);
+            expect(test).to.throw();
+        });
+        it("should throw an error", () => {
+            nameConverter = new NameConventionConverter(null, null, null);
+            const test = () => nameConverter.parse();
             expect(test).to.throw();
         });
     });

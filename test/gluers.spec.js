@@ -1,8 +1,12 @@
 import { expect } from 'chai';
-import { Gluers } from '../src/name-convention/gluer/gluers';
+import { Gluers } from '../src/gluer/gluers';
 
 
 describe('Gluers', function () {
+    it('should throw an error if doesn\'t have pieces', function () {
+        const test = () => Gluers.LowerCamelCase.glue();
+        expect(test).to.throw()
+    })
     describe('#LowerCamelCaseGluer', function () {
         it('should return a lower camel case name', function () {
             let pieces = ['a','complex','name'];
