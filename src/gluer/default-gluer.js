@@ -1,4 +1,4 @@
-import { noop, isNullOrUndefined } from 'huehuejs-common-lang';
+import { noop, isNullOrUndefined } from '@huehuejs/common-lang';
 
 export class DefaultGluer {
 
