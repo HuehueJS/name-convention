@@ -1,6 +1,6 @@
 {
-  "name": "huehuejs-name-convention",
-  "version": "0.0.13",
+  "name": "@huehuejs/name-convention",
+  "version": "0.0.1",
   "description": "Exploring",
   "main": "converter.js",
   "files": [
@@ -21,13 +21,13 @@
     "build": "babel ./src -d ./dist",
     "build-dev": "babel ./src -d ./dist --source-maps inline",
     "predeploy": "rm -rf dist && mkdir -p dist && npm run build && cp ./package.json ./README.md ./dist/",
-    "deploy": "cd ./dist && npm publish",
+    "deploy": "cd ./dist && npm publish --access public",
     "postdeploy": "cd ..",
     "test": "nyc --reporter=html --reporter=text mocha --recursive --compilers js:babel-core/register",
     "coverage": "nyc report --reporter=text-lcov | coveralls"
   },
   "dependencies": {
-    "huehuejs-common-lang": "^0.0.16"
+    "@huehuejs/common-lang": "^0.0.1"
   },
   "devDependencies": {
     "babel": "^6.23.0",
