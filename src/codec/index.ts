@@ -1,19 +1,19 @@
-import {  NameConventionConverter } from '../converter';
+import { NameConventionConverter } from '../converter';
 
 
 export const makeCodec = (fromConvention, toConvention) => {
     return new NameConventionCodec(
-        new NameConventionConverter(fromConvention.gluer,toConvention.splitter),
-        new NameConventionConverter(toConvention.gluer,fromConvention.splitter)
+        new NameConventionConverter(fromConvention.gluer, toConvention.splitter),
+        new NameConventionConverter(toConvention.gluer, fromConvention.splitter)
     );
 }
 
 export class NameConventionCodec {
 
-    constructor(decoder,encoder){
-        this.encoder = encoder;
-        this.decoder = decoder;
-    }
+    constructor(
+        protected decoder,
+        protected encoder
+    ) { }
 
     encode(data) {
         return this.encoder.parse(data);

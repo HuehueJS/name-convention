@@ -2,11 +2,11 @@ import { noop, isNullOrUndefined } from '@huehuejs/common-lang';
 
 export class DefaultGluer {
 
-    constructor(glueString = '', piecePreparer = noop, namePreparer = noop) {
-        this.glueString = glueString;
-        this.namePreparer = namePreparer;
-        this.piecePreparer = piecePreparer;
-    }
+    constructor(
+        protected glueString = '',
+        protected piecePreparer = noop,
+        protected namePreparer = noop
+    ) { }
 
     glue(namePieces) {
         if (isNullOrUndefined(namePieces)) {

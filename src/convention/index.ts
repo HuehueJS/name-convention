@@ -2,7 +2,7 @@ import { Gluers } from '../gluer/gluers';
 import { Splitters } from '../splitter/splitters';
 
 export const NameConventions = {
-    UpperCammelCase: { gluer: Gluers.UpperCammelCase, splitter: Splitters.CamelCase },
+    UpperCammelCase: { gluer: Gluers.UpperCamelCase, splitter: Splitters.CamelCase },
     LowerCammelCase: { gluer: Gluers.LowerCamelCase, splitter: Splitters.CamelCase },
     UpperSnakeCase: { gluer: Gluers.UpperSnakeCase, splitter: Splitters.SnakeCase },
     LowerSnakeCase: { gluer: Gluers.LowerSnakeCase, splitter: Splitters.SnakeCase },

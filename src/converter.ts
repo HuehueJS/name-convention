@@ -3,11 +3,11 @@ const default_matcher = function (value, originalKeyTail, parsedKeyTail) {
 }
 
 export class NameConventionConverter {
-    constructor(gluer, splitter, matcher = default_matcher) {
-        this.gluer = gluer;
-        this.splitter = splitter;
-        this.matcher = matcher;
-    }
+    constructor(
+        protected gluer,
+        protected splitter,
+        protected matcher = default_matcher
+    ) { }
 
     parseString(oneName) {
         return this.gluer.glue(this.splitter.split(oneName));
@@ -33,7 +33,7 @@ export class NameConventionConverter {
         if (typeof item === "string") {
             return this.parseString(item);
         }
-        if(typeof item === "object"){
+        if (typeof item === "object") {
             return this._parse(item, [], [])
         }
         throw Error();

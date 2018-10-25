@@ -4,7 +4,7 @@ import { Gluers } from '../src/gluer/gluers';
 
 describe('Gluers', function () {
     it('should throw an error if doesn\'t have pieces', function () {
-        const test = () => Gluers.LowerCamelCase.glue();
+        const test = () => Gluers.LowerCamelCase.glue(undefined);
         expect(test).to.throw()
     })
     describe('#LowerCamelCaseGluer', function () {

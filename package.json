@@ -1,6 +1,6 @@
 {
   "name": "@huehuejs/name-convention",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "description": "Exploring",
   "main": "index.js",
   "types": "index.d.ts",
@@ -31,10 +31,12 @@
     "@huehuejs/common-lang": "^0.0.1"
   },
   "devDependencies": {
+    "@types/mocha": "^5.2.5",
     "chai": "^4.1.2",
     "coveralls": "^3.0.1",
     "mocha": "^5.1.1",
     "nyc": "^11.7.1",
+    "ts-node": "^7.0.1",
     "typescript": "^3.1.3"
   }
 }
