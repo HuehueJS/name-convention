@@ -24,13 +24,13 @@ export class NameConventionConverter implements NameConventionParser {
     }
 
     protected _parse(item, originalKeyTail, parsedKeyTail) {
-        let newItem = item.constructor();
+        const newItem = item.constructor();
         for (const key in item) {
             const newOriginalKeyTail = originalKeyTail.concat([key]);
             const parsedKey = typeof key === "string" ? this.parseString(key) : key;
             const newParsedKeyTail = parsedKeyTail.concat([parsedKey]);
             const value = item[key];
-            const parsedValue = this.matcher(value, originalKeyTail, parsedKeyTail) ? this._parse(value, originalKeyTail, parsedKeyTail) : value;
+            const parsedValue = this.matcher(value, originalKeyTail, parsedKeyTail) ? this._parse(value, newOriginalKeyTail, newParsedKeyTail) : value;
             newItem[parsedKey] = parsedValue;
         }
         return newItem;
