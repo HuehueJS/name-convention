@@ -1,5 +1,12 @@
 import { Gluers } from '../gluer/gluers';
 import { Splitters } from '../splitter/splitters';
+import { Gluer } from '../gluer';
+import { Splitter } from '../splitter';
+
+export interface NameConvention {
+    gluer: Gluer;
+    splitter: Splitter;
+}
 
 export const NameConventions = {
     UpperCammelCase: { gluer: Gluers.UpperCamelCase, splitter: Splitters.CamelCase },
@@ -7,5 +14,5 @@ export const NameConventions = {
     UpperSnakeCase: { gluer: Gluers.UpperSnakeCase, splitter: Splitters.SnakeCase },
     LowerSnakeCase: { gluer: Gluers.LowerSnakeCase, splitter: Splitters.SnakeCase },
     UpperKebabCase: { gluer: Gluers.UpperKebabCase, splitter: Splitters.KebabCase },
-    LowerKebabCase: { gluer: Gluers.LowerKebabCase, splitter: Splitters.KebabCase}
+    LowerKebabCase: { gluer: Gluers.LowerKebabCase, splitter: Splitters.KebabCase }
 };

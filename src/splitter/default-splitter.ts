@@ -18,8 +18,7 @@ export class DefaultSplitter implements Splitter {
             throw Error("Name cannot be undefined!");
         }
         const preparedName = this.preparerRegex ? name.replace(this.preparerRegex, this.replacePattern) : name;
-        return preparedName
-            .split(this.splitterRegex);
+        return preparedName.split(this.splitterRegex);
     }
 
 }

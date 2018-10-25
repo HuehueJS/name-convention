@@ -1,19 +1,27 @@
+import { Gluer } from "./gluer";
+import { Splitter } from "./splitter";
+
 const default_matcher = function (value, originalKeyTail, parsedKeyTail) {
     return typeof value === "object";
 }
 
-export class NameConventionConverter {
+export interface NameConventionParser {
+    parseString(oneName: string);
+    parse(data: any): any;
+}
+
+export class NameConventionConverter implements NameConventionParser {
     constructor(
-        protected gluer,
-        protected splitter,
+        protected gluer: Gluer,
+        protected splitter: Splitter,
         protected matcher = default_matcher
     ) { }
 
-    parseString(oneName) {
+    parseString(oneName: string): string {
         return this.gluer.glue(this.splitter.split(oneName));
     }
 
-    _parse(item, originalKeyTail, parsedKeyTail) {
+    protected _parse(item, originalKeyTail, parsedKeyTail) {
         let newItem = item.constructor();
         for (const key in item) {
             const newOriginalKeyTail = originalKeyTail.concat([key]);
@@ -26,7 +34,7 @@ export class NameConventionConverter {
         return newItem;
     }
 
-    parse(item) {
+    parse(item: any): any {
         if (!(this.gluer || this.splitter || this.matcher)) {
             throw Error();
         }
