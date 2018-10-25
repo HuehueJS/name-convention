@@ -28,7 +28,7 @@
     "coverage": "nyc report --reporter=text-lcov | codeclimate-test-reporter "
   },
   "dependencies": {
-    "@huehuejs/common-lang": "^0.0.1"
+    "@huehuejs/common-lang": "^0.1.0"
   },
   "devDependencies": {
     "@types/mocha": "^5.2.5",
