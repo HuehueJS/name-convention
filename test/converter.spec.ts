@@ -1,6 +1,6 @@
 import { expect } from 'chai';
-import { Splitters } from '../src/splitter/splitters';
-import { Gluers } from '../src/gluer/gluers';
+import { Splitters } from '../src/splitter';
+import { Gluers } from '../src/gluer';
 import { NameConventionConverter } from '../src/converter';
 
 describe('Name Convention Converter', function () {

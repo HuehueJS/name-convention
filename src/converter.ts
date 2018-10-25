@@ -1,7 +1,9 @@
 import { Gluer } from "./gluer";
 import { Splitter } from "./splitter";
 
-const default_matcher = function (value, originalKeyTail, parsedKeyTail) {
+export type ParseMatcher = ( value : any, originalKeyTail : Array<string>, parsedKeyTail : Array<string>) => boolean;
+
+export const DEFAULT_MATCHER : ParseMatcher = (value, originalKeyTail, parsedKeyTail) => {
     return typeof value === "object";
 }
 
@@ -14,7 +16,7 @@ export class NameConventionConverter implements NameConventionParser {
     constructor(
         protected gluer: Gluer,
         protected splitter: Splitter,
-        protected matcher = default_matcher
+        protected matcher : ParseMatcher = DEFAULT_MATCHER
     ) { }
 
     parseString(oneName: string): string {

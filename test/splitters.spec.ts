@@ -1,6 +1,6 @@
 import { expect } from 'chai';
 
-import { Splitters } from '../src/splitter/splitters';
+import { Splitters } from '../src/splitter';
 
 describe('Splitter',function(){
 

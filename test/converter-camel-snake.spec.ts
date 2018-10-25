@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import { Splitters } from '../src/splitter/splitters';
+import { Splitters } from '../src/splitter';
 import { Gluers } from '../src/gluer/gluers';
 import { NameConventionConverter } from '../src/converter';
 
