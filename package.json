@@ -2,9 +2,10 @@
   "name": "@huehuejs/name-convention",
   "version": "0.0.2",
   "description": "Exploring",
-  "main": "converter.js",
+  "main": "index.js",
+  "types": "index.d.ts",
   "files": [
-    "**/*.js"
+    "**/*"
   ],
   "repository": "https://github.com/HuehueJS/name-convention",
   "author": "HuehueJs",
@@ -18,25 +19,22 @@
     ]
   },
   "scripts": {
-    "build": "babel ./src -d ./dist",
-    "build-dev": "babel ./src -d ./dist --source-maps inline",
-    "predeploy": "rm -rf dist && mkdir -p dist && npm run build && cp ./package.json ./README.md ./dist/",
-    "deploy": "cd ./dist && npm publish --access public",
-    "postdeploy": "cd ..",
-    "test": "nyc --reporter=html --reporter=text mocha --recursive --compilers js:babel-core/register",
-    "coverage": "nyc report --reporter=text-lcov | coveralls"
+    "prebuild": "rm -rf dist",
+    "build": "tsc",
+    "postbuild": "cp package.json dist/",
+    "test": "nyc --reporter=html --reporter=text mocha test/**/*.spec.ts",
+    "predeploy": "npm run build",
+    "deploy": "cd dist/ && npm publish --access public",
+    "coverage": "nyc report --reporter=text-lcov | codeclimate-test-reporter "
   },
   "dependencies": {
     "@huehuejs/common-lang": "^0.0.1"
   },
   "devDependencies": {
-    "babel": "^6.23.0",
-    "babel-cli": "^6.26.0",
-    "babel-preset-env": "^1.6.1",
-    "babel-preset-es2018": "^1.0.0",
     "chai": "^4.1.2",
     "coveralls": "^3.0.1",
     "mocha": "^5.1.1",
-    "nyc": "^11.7.1"
+    "nyc": "^11.7.1",
+    "typescript": "^3.1.3"
   }
 }

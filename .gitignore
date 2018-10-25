@@ -1,8 +1,7 @@
 .*
 !.gitignore
 !.travis.yml
-!.coveralls.yml
-!.babelrc
+!.nycrc
 **.log
 **.lock
 /dist
