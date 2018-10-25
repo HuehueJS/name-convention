@@ -1,7 +1,4 @@
 import { expect } from 'chai';
-import { Gluers } from '../src/gluer/gluers';
-import { Splitters } from '../src/splitter/splitters';
-import { NameConventionConverter } from '../src/converter';
 import { makeCodec } from '../src/codec/index';
 import { NameConventions } from '../src/convention/index';
 

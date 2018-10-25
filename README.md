@@ -1,7 +1,8 @@
 # HuehueJS Name Convention
 [![Build Status](https://travis-ci.org/HuehueJS/name-convention.svg?branch=master)](https://travis-ci.org/HuehueJS/name-convention)
-[![Coverage Status](https://coveralls.io/repos/github/HuehueJS/name-convention/badge.svg?branch=master)](https://coveralls.io/github/HuehueJS/name-convention?branch=master)
 [![npm version](https://badge.fury.io/js/%40huehuejs%2Fname-convention.svg)](https://npmjs.com/@huehuejs/name-convention)
+[![Maintainability](https://api.codeclimate.com/v1/badges/a1cfb1145739173e3dc1/maintainability)](https://codeclimate.com/github/HuehueJS/name-convention/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/a1cfb1145739173e3dc1/test_coverage)](https://codeclimate.com/github/HuehueJS/name-convention/test_coverage)
 ### Installing
 
 ```
